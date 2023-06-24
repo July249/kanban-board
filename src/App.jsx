@@ -1,12 +1,14 @@
 import Column from 'components/Column/Column';
 import './App.css';
 
+const states = [{ section: 'Not Started' }, { section: 'In Progress' }, { section: 'Done' }];
+
 function App() {
   return (
     <div className='App'>
-      <Column state='Not Started' />
-      <Column state='In Progress' />
-      <Column state='Done' />
+      {states.map((state) => (
+        <Column state={state.section} />
+      ))}
     </div>
   );
 }
