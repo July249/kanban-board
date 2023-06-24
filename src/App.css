@@ -1,5 +1,5 @@
 .App {
-  background: var(--COLOR-GRAY);
+  background: linear-gradient(120deg, var(--COLOR-BACKGROUND1) 0%, var(--COLOR-BACKGROUND2) 100%);
   height: 100vh;
   display: flex;
   justify-content: center;
