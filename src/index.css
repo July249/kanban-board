@@ -4,8 +4,18 @@
   --COLOR-GRAY-LIGHT: #cccccc;
   --COLOR-ONGOING: #98c1d9;
   --COLOR-DONE: #ee6c4d;
+  --COLOR-HOVER1: #a8edea;
+  --COLOR-HOVER2: #fed6e3;
+  --COLOR-TEXT: #505050;
+  --COLOR-BACKGROUND1: #fccb90;
+  --COLOR-BACKGROUND2: #d57eeb;
 }
 
 body {
   margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
