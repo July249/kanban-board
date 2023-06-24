@@ -1,0 +1,27 @@
+.task {
+  background: inherit;
+  padding: 0.5rem;
+  border-radius: 15px;
+  color: var(--COLOR-TEXT);
+}
+
+.task:hover {
+  cursor: pointer;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.desc {
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
