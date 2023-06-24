@@ -1,12 +1,54 @@
 .column {
   flex: 1;
-  max-width: 300px;
+  width: 100%;
   height: 400px;
+  overflow-x: hidden;
   overflow-y: auto;
-  padding: 12px;
+  padding: 1.3rem;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 15px;
   margin: 80px 20px 20px;
-  background-color: #fff;
+  background-image: linear-gradient(120deg, var(--COLOR-HOVER1) 0%, var(--COLOR-HOVER2) 100%);
   box-shadow: 0 0 5px #ccc;
+}
+
+.column_title {
+  position: relative;
+  display: inline-block;
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--COLOR-TEXT);
+  z-index: 1;
+}
+
+.column_title::before {
+  position: absolute;
+  display: inline-block;
+  bottom: 0.2rem;
+  left: 0;
+  content: '';
+  width: 110%;
+  height: 1rem;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.column_title.first:before {
+  background-image: linear-gradient(to right, #ffd8d8 0%, #ffa973 100%);
+}
+
+.column_title.second::before {
+  background-image: linear-gradient(to right, #abffe1 0%, #6dffbd 100%);
+}
+
+.column_title.third::before {
+  background-image: linear-gradient(to right, #fec2ff 0%, #fc68ff 100%);
+}
+
+.tasks {
+  width: inherit;
+}
+
+.tasks > .task_item {
+  margin: 1rem 0;
 }
