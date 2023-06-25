@@ -8,7 +8,11 @@
   border: 1px solid #ccc;
   border-radius: 15px;
   margin: 80px 20px 20px;
-  background-image: linear-gradient(120deg, var(--COLOR-HOVER1) 0%, var(--COLOR-HOVER2) 100%);
+  background-image: linear-gradient(
+    120deg,
+    var(--COLOR-BACKGROUND3) 0%,
+    var(--COLOR-BACKGROUND4) 100%
+  );
   box-shadow: 0 0 5px #ccc;
 }
 
@@ -31,18 +35,6 @@
   height: 1rem;
   border-radius: 20px;
   z-index: -1;
-}
-
-.column_title.first:before {
-  background-image: linear-gradient(to right, #ffd8d8 0%, #ffa973 100%);
-}
-
-.column_title.second::before {
-  background-image: linear-gradient(to right, #abffe1 0%, #6dffbd 100%);
-}
-
-.column_title.third::before {
-  background-image: linear-gradient(to right, #fec2ff 0%, #fc68ff 100%);
 }
 
 .tasks {
