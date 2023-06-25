@@ -14,11 +14,15 @@
     var(--COLOR-BACKGROUND4) 100%
   );
   box-shadow: 0 0 5px #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .column_title {
   position: relative;
   display: inline-block;
+  width: fit-content;
   font-size: 1.8rem;
   margin: 0;
   color: var(--COLOR-TEXT);
@@ -26,13 +30,13 @@
 }
 
 .column_title::before {
-  position: absolute;
-  display: inline-block;
-  bottom: 0.2rem;
-  left: 0;
   content: '';
   width: 110%;
   height: 1rem;
+  display: inline-block;
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0;
   border-radius: 20px;
   z-index: -1;
 }
@@ -43,4 +47,8 @@
 
 .tasks > .task_item {
   margin: 1rem 0;
+}
+
+.add_item {
+  width: 100%;
 }
