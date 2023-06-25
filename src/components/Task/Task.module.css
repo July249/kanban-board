@@ -5,6 +5,7 @@
   padding: 0.5rem;
   border-radius: 15px;
   color: var(--COLOR-TEXT);
+  border: 1px solid #b4b4b4;
 }
 
 .task:hover {
