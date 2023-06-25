@@ -1,13 +1,13 @@
 import Column from 'components/Column/Column';
 import './App.css';
 
-const states = [{ section: 'Not Started' }, { section: 'In Progress' }, { section: 'Done' }];
+const states = ['NOT_STARTED', 'IN_PROGRESS', 'DONE'];
 
 function App() {
   return (
     <div className='App'>
       {states.map((state) => (
-        <Column state={state.section} />
+        <Column state={state} />
       ))}
     </div>
   );
