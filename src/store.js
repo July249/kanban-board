@@ -3,31 +3,28 @@ import { create } from 'zustand';
 const store = (set) => ({
   tasks: [
     {
-      id: 1,
-      title: 'Task Not Started',
-      description: 'Task Description1',
+      tag: '001',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, error temporibus! Vero, obcaecati deleniti nihil quibusdam quis delectus dolores sit!',
       status: 'NOT_STARTED',
     },
     {
-      id: 2,
-      title: 'Task Progress',
+      tag: 2,
       description: 'Task Description2',
       status: 'IN_PROGRESS',
     },
     {
-      id: 3,
-      title: 'Task Done',
+      tag: 3,
       description: 'Task Description3',
       status: 'DONE',
     },
   ],
-  addTask: (title, description, status) =>
+  addTask: (description, status) =>
     set((store) => ({
       tasks: [
         ...store.tasks,
         {
-          id: store.tasks.length + 1,
-          title,
+          tag: store.tasks.length + 1,
           description,
           status,
         },
