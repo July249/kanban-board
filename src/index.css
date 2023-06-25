@@ -33,6 +33,12 @@ button {
   cursor: pointer;
 }
 
+input {
+  border: none;
+  background: none;
+  outline: none;
+}
+
 .NOT_STARTED:before {
   background-image: linear-gradient(to right, #ffd8d8 0%, #ffa973 100%);
 }
@@ -43,4 +49,29 @@ button {
 
 .DONE::before {
   background-image: linear-gradient(to right, #fec2ff 0%, #fc68ff 100%);
+}
+
+.add_button {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #ccc;
+  color: var(--COLOR-TEXT);
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: start;
+  cursor: pointer;
+}
+
+.add_button.NOT_STARTED:hover {
+  box-shadow: 0 0 5px #ffa973;
+}
+
+.add_button.IN_PROGRESS:hover {
+  box-shadow: 0 0 5px #6dffbd;
+}
+
+.add_button.DONE:hover {
+  box-shadow: 0 0 5px #fc68ff;
 }
