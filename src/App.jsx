@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='App'>
       {states.map((state) => (
-        <Column state={state} />
+        <Column key={state} state={state} />
       ))}
     </div>
   );
