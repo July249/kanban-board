@@ -39,6 +39,16 @@ input {
   outline: none;
 }
 
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* Style */
+
 .NOT_STARTED:before {
   background-image: linear-gradient(to right, #ffd8d8 0%, #ffa973 100%);
 }
