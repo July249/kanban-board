@@ -21,6 +21,18 @@ const store = (set) => ({
       status: 'DONE',
     },
   ],
+  addTask: (title, description, status) =>
+    set((store) => ({
+      tasks: [
+        ...store.tasks,
+        {
+          id: store.tasks.length + 1,
+          title,
+          description,
+          status,
+        },
+      ],
+    })),
 });
 
 export const useStore = create(store);
