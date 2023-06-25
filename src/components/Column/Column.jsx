@@ -6,7 +6,7 @@ import { shallow } from 'zustand/shallow';
 
 export default function Column({ state }) {
   const tasks = useStore((store) => store.tasks.filter((task) => task.status === state), shallow);
-
+  const addTask = useStore((store) => store.addTask);
   return (
     <div className={classNames(style.column)}>
       <div className='task_wrapper'>
@@ -20,7 +20,13 @@ export default function Column({ state }) {
         </ul>
       </div>
       <div className={classNames(style.add_item)}>
-        <button type='button' className={classNames('add_button', state)}>
+        <button
+          type='button'
+          className={classNames('add_button', state)}
+          onClick={() => {
+            addTask('asdfasdf', 'qwerqwerqwerqwer', state);
+          }}
+        >
           + Add item
         </button>
       </div>
