@@ -1,4 +1,6 @@
 .task {
+  display: flex;
+  flex-direction: column;
   background: inherit;
   padding: 0.5rem;
   border-radius: 15px;
