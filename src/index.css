@@ -4,11 +4,12 @@
   --COLOR-GRAY-LIGHT: #cccccc;
   --COLOR-ONGOING: #98c1d9;
   --COLOR-DONE: #ee6c4d;
-  --COLOR-HOVER1: #a8edea;
-  --COLOR-HOVER2: #fed6e3;
   --COLOR-TEXT: #505050;
+  --COLOR-HOVER: #fff;
   --COLOR-BACKGROUND1: #fccb90;
   --COLOR-BACKGROUND2: #d57eeb;
+  --COLOR-BACKGROUND3: #a8edea;
+  --COLOR-BACKGROUND4: #fed6e3;
 }
 
 body {
@@ -18,4 +19,16 @@ body {
 ul {
   list-style: none;
   padding: 0;
+}
+
+.NOT_STARTED:before {
+  background-image: linear-gradient(to right, #ffd8d8 0%, #ffa973 100%);
+}
+
+.IN_PROGRESS::before {
+  background-image: linear-gradient(to right, #abffe1 0%, #6dffbd 100%);
+}
+
+.DONE::before {
+  background-image: linear-gradient(to right, #fec2ff 0%, #fc68ff 100%);
 }
