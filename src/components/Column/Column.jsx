@@ -1,5 +1,6 @@
 import Task from 'components/Task/Task';
 import style from './Column.module.css';
+import classNames from 'classnames';
 
 const tasks = [
   {
@@ -22,17 +23,7 @@ const tasks = [
 export default function Column({ state }) {
   return (
     <div className={style.column}>
-      <h1
-        className={`${style.column_title} ${
-          state === 'Not Started'
-            ? style.first
-            : state === 'In Progress'
-            ? style.second
-            : style.third
-        }`}
-      >
-        {state}
-      </h1>
+      <h1 className={classNames(style.column_title, state)}>{state}</h1>
       <ul className={style.tasks}>
         {tasks.map((task) => (
           <li className={style.task_item}>
