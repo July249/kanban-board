@@ -1,6 +1,7 @@
 .task {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   background: inherit;
   padding: 0.5rem;
   border-radius: 15px;
@@ -14,16 +15,15 @@
   background: var(--COLOR-HOVER);
 }
 
-.title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin: 0;
+.tag {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0.4rem;
 }
 
 .desc {
+  width: 170px;
   font-size: 1rem;
-  margin-top: 10px;
-  margin-bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

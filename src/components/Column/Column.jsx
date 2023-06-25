@@ -13,7 +13,7 @@ export default function Column({ state }) {
         <h1 className={classNames(style.column_title, state)}>{state}</h1>
         <ul className={style.tasks}>
           {tasks.map((task) => (
-            <li key={task.id} className={style.task_item}>
+            <li key={task.tag} className={style.task_item}>
               <Task task={task} />
             </li>
           ))}
