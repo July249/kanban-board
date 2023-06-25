@@ -12,6 +12,7 @@
   --COLOR-BACKGROUND4: #fed6e3;
 }
 
+/* Reset Style */
 body {
   margin: 0;
 }
@@ -19,6 +20,17 @@ body {
 ul {
   list-style: none;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--COLOR-TEXT);
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .NOT_STARTED:before {
