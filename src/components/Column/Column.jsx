@@ -4,7 +4,13 @@ import classNames from 'classnames';
 import { useStore } from '../../store';
 import { shallow } from 'zustand/shallow';
 
-export default function Column({ state, onCurrentStatus, onOpenInput }) {
+export default function Column({
+  state,
+  onCurrentStatus,
+  onOpenInput,
+  onModalToggle,
+  onModalTaskId,
+}) {
   const columnTitle = state.replace('_', ' ');
   const tasks = useStore((store) => store.tasks.filter((task) => task.status === state), shallow);
 
@@ -14,8 +20,8 @@ export default function Column({ state, onCurrentStatus, onOpenInput }) {
         <h1 className={classNames(style.column_title, state)}>{columnTitle}</h1>
         <ul className={style.tasks}>
           {tasks.map((task) => (
-            <li key={task.tag} className={style.task_item}>
-              <Task task={task} />
+            <li key={task.tag} className={style.task_item} onClick={() => onModalTaskId(task.id)}>
+              <Task task={task} onModalToggle={onModalToggle} />
             </li>
           ))}
         </ul>
@@ -24,7 +30,7 @@ export default function Column({ state, onCurrentStatus, onOpenInput }) {
         <button
           type='button'
           className={classNames('add_button', state)}
-          onClick={(e) => {
+          onClick={() => {
             onCurrentStatus(state);
             onOpenInput();
           }}
