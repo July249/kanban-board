@@ -4,13 +4,14 @@ import classNames from 'classnames';
 import { useStore } from '../../store';
 import { shallow } from 'zustand/shallow';
 
-export default function Column({ state }) {
+export default function Column({ state, onCurrentStatus, onOpenInput }) {
+  const columnTitle = state.replace('_', ' ');
   const tasks = useStore((store) => store.tasks.filter((task) => task.status === state), shallow);
-  const addTask = useStore((store) => store.addTask);
+
   return (
     <div className={classNames(style.column)}>
       <div className='task_wrapper'>
-        <h1 className={classNames(style.column_title, state)}>{state}</h1>
+        <h1 className={classNames(style.column_title, state)}>{columnTitle}</h1>
         <ul className={style.tasks}>
           {tasks.map((task) => (
             <li key={task.tag} className={style.task_item}>
@@ -23,8 +24,9 @@ export default function Column({ state }) {
         <button
           type='button'
           className={classNames('add_button', state)}
-          onClick={() => {
-            addTask('asdfasdf', 'qwerqwerqwerqwer', state);
+          onClick={(e) => {
+            onCurrentStatus(state);
+            onOpenInput();
           }}
         >
           + Add item
