@@ -5,6 +5,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   opacity: 0;
   pointer-events: none;
@@ -27,4 +28,13 @@
   font-weight: bold;
   text-align: start;
   cursor: pointer;
+}
+
+.input_wrapper input[type='button'] {
+  width: 2rem;
+  height: 2rem;
+  line-height: 1rem;
+  text-align: center;
+  background-color: #e6e6e6;
+  border-radius: 50%;
 }
