@@ -1,29 +1,13 @@
 import { create } from 'zustand';
 
 const store = (set) => ({
-  tasks: [
-    {
-      tag: 1,
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, error temporibus! Vero, obcaecati deleniti nihil quibusdam quis delectus dolores sit!',
-      status: 'NOT_STARTED',
-    },
-    {
-      tag: 2,
-      description: 'Task Description2',
-      status: 'IN_PROGRESS',
-    },
-    {
-      tag: 3,
-      description: 'Task Description3',
-      status: 'DONE',
-    },
-  ],
+  tasks: [],
   addTask: (description, status) =>
     set((store) => ({
       tasks: [
         ...store.tasks,
         {
+          id: new Date().getTime(),
           tag: store.tasks.length + 1,
           description,
           status,
@@ -31,9 +15,9 @@ const store = (set) => ({
       ],
     })),
 
-  deleteTask: (tag) =>
+  deleteTask: (id) =>
     set((store) => ({
-      tasks: store.tasks.filter((task) => task.tag !== tag),
+      tasks: store.tasks.filter((task) => task.id !== id),
     })),
 });
 
