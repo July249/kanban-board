@@ -18,6 +18,11 @@
   justify-content: space-between;
 }
 
+.column.drop {
+  border: 1px dashed #ccc;
+  background: var(--COLOR-BACKGROUND2);
+}
+
 .column_title {
   position: relative;
   display: inline-block;

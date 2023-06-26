@@ -3,6 +3,7 @@ import style from './Column.module.css';
 import classNames from 'classnames';
 import { useStore } from '../../store';
 import { shallow } from 'zustand/shallow';
+import { useState } from 'react';
 
 export default function Column({
   state,
@@ -11,6 +12,7 @@ export default function Column({
   onModalToggle,
   onModalTaskId,
 }) {
+  const [drop, setDrop] = useState(false);
   const columnTitle = state.replace('_', ' ');
   const tasks = useStore((store) => store.tasks.filter((task) => task.status === state), shallow);
   const setDraggedTask = useStore((store) => store.setDraggedTask);
@@ -19,10 +21,17 @@ export default function Column({
 
   return (
     <div
-      className={classNames(style.column)}
-      onDragOver={(e) => e.preventDefault()}
+      className={classNames(style.column, drop && style.drop)}
+      onDragOver={(e) => {
+        setDrop(true);
+        e.preventDefault();
+      }}
+      onDragLeave={(e) => {
+        setDrop(false);
+        e.preventDefault();
+      }}
       onDrop={(e) => {
-        console.log(draggedTask);
+        setDrop(false);
         moveTask(draggedTask, state);
         setDraggedTask(null);
       }}
