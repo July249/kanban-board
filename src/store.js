@@ -2,6 +2,8 @@ import { create } from 'zustand';
 
 const store = (set) => ({
   tasks: [],
+  draggedTask: null,
+
   addTask: (description, status) =>
     set((store) => ({
       tasks: [
@@ -13,6 +15,13 @@ const store = (set) => ({
           status,
         },
       ],
+    })),
+
+  setDraggedTask: (id) => set({ draggedTask: id }),
+
+  moveTask: (id, status) =>
+    set((store) => ({
+      tasks: store.tasks.map((task) => (task.id === id ? { ...task, status } : task)),
     })),
 
   deleteTask: (id) =>

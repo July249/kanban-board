@@ -13,9 +13,20 @@ export default function Column({
 }) {
   const columnTitle = state.replace('_', ' ');
   const tasks = useStore((store) => store.tasks.filter((task) => task.status === state), shallow);
+  const setDraggedTask = useStore((store) => store.setDraggedTask);
+  const draggedTask = useStore((store) => store.draggedTask);
+  const moveTask = useStore((store) => store.moveTask);
 
   return (
-    <div className={classNames(style.column)}>
+    <div
+      className={classNames(style.column)}
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => {
+        console.log(draggedTask);
+        moveTask(draggedTask, state);
+        setDraggedTask(null);
+      }}
+    >
       <div className='task_wrapper'>
         <h1 className={classNames(style.column_title, state)}>{columnTitle}</h1>
         <ul className={style.tasks}>
