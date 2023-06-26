@@ -3,7 +3,7 @@ import { create } from 'zustand';
 const store = (set) => ({
   tasks: [
     {
-      tag: '001',
+      tag: 1,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, error temporibus! Vero, obcaecati deleniti nihil quibusdam quis delectus dolores sit!',
       status: 'NOT_STARTED',
@@ -29,6 +29,11 @@ const store = (set) => ({
           status,
         },
       ],
+    })),
+
+  deleteTask: (tag) =>
+    set((store) => ({
+      tasks: store.tasks.filter((task) => task.tag !== tag),
     })),
 });
 
